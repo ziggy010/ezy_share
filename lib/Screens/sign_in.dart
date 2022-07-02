@@ -2,7 +2,7 @@ import 'package:ezy_share/Screens/register_screen.dart';
 import 'package:ezy_share/components/reusable_button.dart';
 import 'package:ezy_share/components/text_fields.dart';
 import 'package:ezy_share/constant.dart';
-import 'package:ezy_share/home.dart';
+import 'package:ezy_share/Screens/home.dart';
 import 'package:flutter/material.dart';
 
 class SignIn extends StatefulWidget {

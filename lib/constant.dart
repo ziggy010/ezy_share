@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 const kSkip_nextTextStyle = TextStyle(
   color: Colors.white,
@@ -67,4 +68,43 @@ const kOnboardingText = TextStyle(
   fontSize: 20,
   fontWeight: FontWeight.bold,
   fontFamily: 'poppins',
+);
+
+const kMyCardTextStyle = TextStyle(
+  color: Colors.black,
+  fontSize: 35,
+  fontWeight: FontWeight.bold,
+  fontFamily: 'poppins',
+);
+const kMyCardSubTextStyle = TextStyle(
+  color: Color.fromRGBO(97, 97, 97, 1),
+  fontSize: 13,
+  fontWeight: FontWeight.bold,
+  fontFamily: 'poppins',
+);
+
+const kCardCompanyName = TextStyle(
+  color: Colors.black,
+  fontSize: 27,
+  letterSpacing: 2.0,
+);
+const kCardCompanyMotive = TextStyle(
+  color: Colors.blueAccent,
+  fontSize: 11,
+);
+
+const kCardName = TextStyle(
+  color: Colors.black,
+  fontSize: 14,
+  letterSpacing: 1.2,
+  fontFamily: 'poppins',
+  fontWeight: FontWeight.bold,
+);
+
+const kProfession = TextStyle(
+  color: Colors.blueAccent,
+  fontSize: 9,
+  letterSpacing: 1.2,
+  fontFamily: 'poppins',
+  fontWeight: FontWeight.bold,
 );

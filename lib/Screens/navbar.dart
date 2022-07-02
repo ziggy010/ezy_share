@@ -1,4 +1,6 @@
-import 'package:ezy_share/my_account.dart';
+import 'package:ezy_share/Screens/faq.dart';
+import 'package:ezy_share/Screens/my_account.dart';
+import 'package:ezy_share/Screens/settings.dart';
 import 'package:flutter/material.dart';
 
 class NavBar extends StatelessWidget {
@@ -76,24 +78,34 @@ class NavBar extends StatelessWidget {
               style: TextStyle(fontSize: 18),
             ),
           ),
-          const ListTile(
-            leading: Icon(
-              Icons.settings,
-              size: 24,
-            ),
-            title: Text(
-              'Settings',
-              style: TextStyle(fontSize: 18),
+          GestureDetector(
+            onTap: () {
+              Navigator.pushNamed(context, SettingsScreen.id);
+            },
+            child: const ListTile(
+              leading: Icon(
+                Icons.settings,
+                size: 24,
+              ),
+              title: Text(
+                'Settings',
+                style: TextStyle(fontSize: 18),
+              ),
             ),
           ),
-          const ListTile(
-            leading: Icon(
-              Icons.help,
-              size: 24,
-            ),
-            title: Text(
-              'Help',
-              style: TextStyle(fontSize: 18),
+          GestureDetector(
+            onTap: () {
+              Navigator.pushNamed(context, FAQ.id);
+            },
+            child: const ListTile(
+              leading: Icon(
+                Icons.help,
+                size: 24,
+              ),
+              title: Text(
+                'Help',
+                style: TextStyle(fontSize: 18),
+              ),
             ),
           ),
           const ListTile(

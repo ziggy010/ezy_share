@@ -1,6 +1,9 @@
-import 'package:ezy_share/qr_code.dart';
+import 'package:ezy_share/constant.dart';
+import 'package:ezy_share/Screens/qr_code.dart';
 import 'package:flutter/material.dart';
-import 'package:ezy_share/navbar.dart';
+import 'package:ezy_share/Screens/navbar.dart';
+
+import '../components/reusable_cards.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -43,9 +46,47 @@ class _HomeState extends State<Home> {
                 height: 570,
                 width: 400,
                 decoration: BoxDecoration(
-                  color: Colors.pink[50],
+                  color: Colors.grey.shade300,
                   borderRadius: const BorderRadius.all(
                     Radius.circular(18.0),
+                  ),
+                ),
+                child: Padding(
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+                  child: SingleChildScrollView(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          'My cards',
+                          style: kMyCardTextStyle,
+                        ),
+                        const SizedBox(
+                          height: 5,
+                        ),
+                        const Text(
+                          'Choose your cards',
+                          style: kMyCardSubTextStyle,
+                        ),
+                        const SizedBox(
+                          height: 30,
+                        ),
+                        ReusableCards(),
+                        SizedBox(
+                          height: 15,
+                        ),
+                        ReusableCards(),
+                        SizedBox(
+                          height: 15,
+                        ),
+                        ReusableCards(),
+                        SizedBox(
+                          height: 15,
+                        ),
+                        ReusableCards(),
+                      ],
+                    ),
                   ),
                 ),
               ),
@@ -53,33 +94,6 @@ class _HomeState extends State<Home> {
           ],
         ),
       ]),
-      // floatingActionButton: FloatingActionButton(
-      //   onPressed: () {},
-      //   child: const Icon(
-      //     Icons.qr_code_scanner,
-      //     size: 60,
-      //   ),
-      // ),
-      // floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      // bottomNavigationBar: BottomAppBar(
-      //   elevation: 2.0,
-      //   color: Colors.blue,
-      //   shape: const CircularNotchedRectangle(
-
-      //   ),
-      //   notchMargin: 5,
-      //   child: Row(
-      //     mainAxisSize: MainAxisSize.max,
-      //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      //     children: <Widget>[
-      //       IconButton(
-      //         icon: const Icon(
-      //           Icons.people,
-      //           color: Colors.blue,
-      //         ),
-      //         onPressed: () {},
-      //       ),
-
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       floatingActionButton: Transform.translate(
         offset: const Offset(0, -10),
