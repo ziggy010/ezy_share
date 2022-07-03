@@ -1,8 +1,11 @@
+import 'package:ezy_share/Screens/about_us.dart';
 import 'package:ezy_share/Screens/card_details.dart';
 import 'package:ezy_share/Screens/faq.dart';
 import 'package:ezy_share/Screens/homepage.dart';
 import 'package:ezy_share/Screens/onboarding_scree.dart';
+import 'package:ezy_share/Screens/profile_screen.dart';
 import 'package:ezy_share/Screens/register_screen.dart';
+import 'package:ezy_share/Screens/saved_card_screen.dart';
 import 'package:ezy_share/Screens/settings.dart';
 import 'package:ezy_share/Screens/sign_in.dart';
 import 'package:ezy_share/Screens/my_account.dart';
@@ -31,6 +34,9 @@ class MyApp extends StatelessWidget {
           ProfileScreen.id: (context) => ProfileScreen(),
           SettingsScreen.id: (context) => SettingsScreen(),
           FAQ.id: (context) => FAQ(),
+          AboutScreen.id: (context) => AboutScreen(),
+          SavedCard.id: (context) => SavedCard(),
+          Profile.id: (context) => Profile(),
         },
       ),
       designSize: const Size(390, 844),

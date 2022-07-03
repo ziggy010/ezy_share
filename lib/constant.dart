@@ -109,3 +109,23 @@ var kProfession = TextStyle(
   fontFamily: 'poppins',
   fontWeight: FontWeight.bold,
 );
+
+var kAboutTextStyle = TextStyle(
+  color: Colors.grey.shade400,
+  fontSize: 40.sp,
+  letterSpacing: 1.5.sp,
+  fontFamily: 'poppins',
+  fontWeight: FontWeight.bold,
+);
+var kAboutVersion = TextStyle(
+  color: Color.fromARGB(255, 131, 130, 130),
+  fontSize: 17.sp,
+  letterSpacing: 1.5.sp,
+  fontFamily: 'poppins',
+);
+
+var kAboutSub = TextStyle(
+  color: Colors.grey.shade400,
+  fontFamily: 'poppins',
+  fontSize: 12,
+);

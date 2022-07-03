@@ -1,3 +1,4 @@
+import 'package:ezy_share/Screens/about_us.dart';
 import 'package:ezy_share/Screens/faq.dart';
 import 'package:ezy_share/Screens/my_account.dart';
 import 'package:ezy_share/contact.dart';
@@ -112,14 +113,19 @@ class NavBar extends StatelessWidget {
               style: TextStyle(fontSize: 18),
             ),
           ),
-          const ListTile(
-            leading: Icon(
-              Icons.info,
-              size: 24,
-            ),
-            title: Text(
-              'About us',
-              style: TextStyle(fontSize: 18),
+          GestureDetector(
+            onTap: () {
+              Navigator.pushNamed(context, AboutScreen.id);
+            },
+            child: const ListTile(
+              leading: Icon(
+                Icons.info,
+                size: 24,
+              ),
+              title: Text(
+                'About us',
+                style: TextStyle(fontSize: 18),
+              ),
             ),
           ),
         ],
