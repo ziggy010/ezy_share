@@ -1,5 +1,6 @@
 import 'package:ezy_share/Screens/faq.dart';
 import 'package:ezy_share/Screens/my_account.dart';
+import 'package:ezy_share/contact.dart';
 import 'package:ezy_share/Screens/settings.dart';
 import 'package:flutter/material.dart';
 
@@ -68,16 +69,6 @@ class NavBar extends StatelessWidget {
               style: TextStyle(fontSize: 18),
             ),
           ),
-          const ListTile(
-            leading: Icon(
-              Icons.featured_video,
-              size: 24,
-            ),
-            title: Text(
-              'Ads',
-              style: TextStyle(fontSize: 18),
-            ),
-          ),
           GestureDetector(
             onTap: () {
               Navigator.pushNamed(context, SettingsScreen.id);
@@ -103,9 +94,22 @@ class NavBar extends StatelessWidget {
                 size: 24,
               ),
               title: Text(
-                'Help',
+                'FAQ',
                 style: TextStyle(fontSize: 18),
               ),
+            ),
+          ),
+          ListTile(
+            onTap: () {
+              Navigator.pushNamed(context, Contact.id);
+            },
+            leading: Icon(
+              Icons.contact_phone,
+              size: 24,
+            ),
+            title: Text(
+              'Contact',
+              style: TextStyle(fontSize: 18),
             ),
           ),
           const ListTile(
