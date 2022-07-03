@@ -4,7 +4,6 @@ import 'package:lottie/lottie.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class Contact extends StatefulWidget {
-  Contact({Key? key}) : super(key: key);
   static const String id = 'ContactScreen';
   @override
   State<Contact> createState() => _ContactState();

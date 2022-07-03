@@ -37,18 +37,13 @@ class _HomeState extends State<Home> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  GestureDetector(
-                    onTap: () {
-                      Navigator.pushNamed(context, SavedCard.id);
-                    },
-                    child: Text(
-                      'Hi, User!',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 27.sp,
-                        fontFamily: 'poppins',
-                        fontWeight: FontWeight.bold,
-                      ),
+                  Text(
+                    'Hi, User!',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 27.sp,
+                      fontFamily: 'poppins',
+                      fontWeight: FontWeight.bold,
                     ),
                   ),
                   GestureDetector(
@@ -273,7 +268,22 @@ class BottomNavigationView extends StatelessWidget {
           mainAxisSize: MainAxisSize.max,
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: <Widget>[
+            Icon(
+              Icons.home,
+              size: 40,
+              color: Colors.grey.shade500,
+            ),
             _buildMiddleTabItem(),
+            GestureDetector(
+              onTap: () {
+                Navigator.pushNamed(context, SavedCard.id);
+              },
+              child: Icon(
+                Icons.save_rounded,
+                size: 40,
+                color: Colors.grey.shade500,
+              ),
+            ),
           ],
         ),
       ),
@@ -290,7 +300,6 @@ Widget _buildMiddleTabItem() {
         mainAxisAlignment: MainAxisAlignment.center,
         children: const <Widget>[
           SizedBox(height: 24),
-          Text(''),
         ],
       ),
     ),

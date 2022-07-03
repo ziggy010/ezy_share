@@ -9,7 +9,7 @@ import 'package:ezy_share/Screens/saved_card_screen.dart';
 import 'package:ezy_share/Screens/settings.dart';
 import 'package:ezy_share/Screens/sign_in.dart';
 import 'package:ezy_share/Screens/my_account.dart';
-import 'package:ezy_share/contact.dart';
+import 'package:ezy_share/Screens/contact.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -35,6 +35,7 @@ class MyApp extends StatelessWidget {
           SettingsScreen.id: (context) => SettingsScreen(),
           FAQ.id: (context) => FAQ(),
           AboutScreen.id: (context) => AboutScreen(),
+          Contact.id: (context) => Contact(),
           SavedCard.id: (context) => SavedCard(),
           Profile.id: (context) => Profile(),
         },

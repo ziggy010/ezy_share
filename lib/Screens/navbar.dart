@@ -1,7 +1,7 @@
 import 'package:ezy_share/Screens/about_us.dart';
 import 'package:ezy_share/Screens/faq.dart';
 import 'package:ezy_share/Screens/my_account.dart';
-import 'package:ezy_share/contact.dart';
+import 'package:ezy_share/Screens/contact.dart';
 import 'package:ezy_share/Screens/settings.dart';
 import 'package:flutter/material.dart';
 

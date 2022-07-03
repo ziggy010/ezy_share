@@ -1,4 +1,8 @@
+import 'package:ezy_share/Screens/about_us.dart';
+import 'package:ezy_share/Screens/faq.dart';
 import 'package:ezy_share/Screens/my_account.dart';
+import 'package:ezy_share/Screens/saved_card_screen.dart';
+import 'package:ezy_share/Screens/settings.dart';
 import 'package:flutter/material.dart';
 import 'package:toggle_switch/toggle_switch.dart';
 
@@ -54,16 +58,7 @@ class _ProfileState extends State<Profile> {
             },
           ),
           Row(
-            children: const [
-              // Text(
-              //   "Main",
-              //   style: TextStyle(
-              //     color: Colors.white,
-              //     fontSize: 17,
-              //     fontWeight: FontWeight.w600,
-              //   ),
-              // ),
-            ],
+            children: const [],
           ),
           Container(
             height: 498,
@@ -85,8 +80,8 @@ class _ProfileState extends State<Profile> {
                   inactiveFgColor: Colors.white,
                   totalSwitches: 2,
                   icons: const [
-                    Icons.lightbulb,
-                    Icons.lightbulb,
+                    Icons.lightbulb_circle_outlined,
+                    Icons.lightbulb_circle,
                   ],
                   iconSize: 30.0,
                   activeBgColors: const [
@@ -110,7 +105,9 @@ class _ProfileState extends State<Profile> {
                   Icons.keyboard_arrow_right_sharp,
                   color: Colors.white,
                 ),
-                onTap: () {},
+                onTap: () {
+                  Navigator.pushNamed(context, SavedCard.id);
+                },
               ),
               ListTile(
                 title: const Text(
@@ -146,7 +143,9 @@ class _ProfileState extends State<Profile> {
                   Icons.keyboard_arrow_right_sharp,
                   color: Colors.white,
                 ),
-                onTap: () {},
+                onTap: () {
+                  Navigator.pushNamed(context, SettingsScreen.id);
+                },
               ),
               ListTile(
                 title: const Text(
@@ -157,7 +156,9 @@ class _ProfileState extends State<Profile> {
                   Icons.keyboard_arrow_right_sharp,
                   color: Colors.white,
                 ),
-                onTap: () {},
+                onTap: () {
+                  Navigator.pushNamed(context, AboutScreen.id);
+                },
               ),
               ListTile(
                 title: const Text(
@@ -168,7 +169,9 @@ class _ProfileState extends State<Profile> {
                   Icons.keyboard_arrow_right_sharp,
                   color: Colors.white,
                 ),
-                onTap: () {},
+                onTap: () {
+                  Navigator.pushNamed(context, FAQ.id);
+                },
               ),
               ListTile(
                 title: const Text(
