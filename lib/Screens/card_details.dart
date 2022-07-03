@@ -95,6 +95,14 @@ class CardScreen extends StatelessWidget {
                           height: 20,
                         ),
                         ReusableTextField(
+                          hintText: 'Company name',
+                          labelText: 'Company name',
+                          onChanged: (value) {},
+                        ),
+                        SizedBox(
+                          height: 20,
+                        ),
+                        ReusableTextField(
                           hintText: 'Contact number',
                           labelText: 'Contact number',
                           onChanged: (value) {},
@@ -109,27 +117,6 @@ class CardScreen extends StatelessWidget {
                         ),
                         SizedBox(
                           height: 20,
-                        ),
-                        ReusableTextField(
-                          hintText: 'Location',
-                          labelText: 'Location',
-                          onChanged: (value) {},
-                        ),
-                        SizedBox(
-                          height: 20,
-                        ),
-                        ReusableTextField(
-                          hintText: 'Social media link',
-                          labelText: 'Social media link',
-                          onChanged: (value) {},
-                        ),
-                        SizedBox(
-                          height: 20,
-                        ),
-                        ReusableTextField(
-                          hintText: 'Social media link',
-                          labelText: 'Social media link',
-                          onChanged: (value) {},
                         ),
                       ],
                     ),

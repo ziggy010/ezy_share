@@ -1,20 +1,17 @@
 import 'package:ezy_share/constant.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class ReusableCards extends StatelessWidget {
-  const ReusableCards({
-    Key? key,
-  }) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 190,
-      width: 300,
+      height: 190.h,
+      width: 300.w,
       decoration: BoxDecoration(
         color: Colors.grey.shade200,
-        borderRadius: BorderRadius.circular(17),
+        borderRadius: BorderRadius.circular(17.r),
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -25,18 +22,18 @@ class ReusableCards extends StatelessWidget {
             children: [
               Image.asset(
                 'lib/image/cardLogo.png',
-                height: 90,
-                width: 90,
+                height: 90.h,
+                width: 90.h,
               ),
               SizedBox(
-                height: 5,
+                height: 5.h,
               ),
               Text(
                 'Ezy Share',
                 style: GoogleFonts.bebasNeue(textStyle: kCardCompanyName),
               ),
               SizedBox(
-                height: 5,
+                height: 5.h,
               ),
               Text(
                 'Share and connect',
@@ -47,7 +44,7 @@ class ReusableCards extends StatelessWidget {
             ],
           ),
           SizedBox(
-            width: 20,
+            width: 20.h,
           ),
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -64,21 +61,21 @@ class ReusableCards extends StatelessWidget {
                 style: kProfession,
               ),
               SizedBox(
-                height: 10,
+                height: 10.h,
               ),
               CardDetailLines(
                 specificIcon: Icons.call,
                 info: '+977 9813110577',
               ),
               SizedBox(
-                height: 10,
+                height: 10.h,
               ),
               CardDetailLines(
                 specificIcon: Icons.email_outlined,
                 info: 'tajale01@gmail.com',
               ),
               SizedBox(
-                height: 10,
+                height: 10.h,
               ),
               CardDetailLines(
                 specificIcon: Icons.language_outlined,
@@ -104,16 +101,16 @@ class CardDetailLines extends StatelessWidget {
       children: [
         Icon(
           specificIcon,
-          size: 12,
+          size: 12.sm,
         ),
         SizedBox(
-          width: 10,
+          width: 10.w,
         ),
         Text(
           info,
           style: TextStyle(
             fontFamily: 'poppins',
-            fontSize: 9,
+            fontSize: 9.sp,
             fontWeight: FontWeight.bold,
           ),
         ),

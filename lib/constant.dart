@@ -1,109 +1,110 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-const kSkip_nextTextStyle = TextStyle(
+var kSkip_nextTextStyle = TextStyle(
   color: Colors.white,
-  fontSize: 13,
+  fontSize: 13.sp,
   fontWeight: FontWeight.bold,
   fontFamily: 'poppins',
 );
 
-const kHomePageText = TextStyle(
+var kHomePageText = TextStyle(
   color: Colors.white,
-  fontSize: 20,
+  fontSize: 20.sp,
   fontWeight: FontWeight.bold,
   fontFamily: 'poppins',
 );
 
-const kHomePageSubText = TextStyle(
+var kHomePageSubText = TextStyle(
   color: Color.fromRGBO(146, 145, 145, 1),
-  fontSize: 12,
+  fontSize: 12.sp,
   fontWeight: FontWeight.bold,
   fontFamily: 'poppins',
 );
 
-const kButtonText = TextStyle(
+var kButtonText = TextStyle(
   color: Colors.black,
-  fontSize: 16,
+  fontSize: 16.sp,
   fontWeight: FontWeight.bold,
   fontFamily: 'poppins',
 );
 
-const kSignInHeadText = TextStyle(
+var kSignInHeadText = TextStyle(
   color: Colors.white,
-  fontSize: 27,
+  fontSize: 27.sp,
   fontWeight: FontWeight.bold,
   fontFamily: 'poppins',
   letterSpacing: 2.5,
 );
 
-const kSignInSubText = TextStyle(
+var kSignInSubText = TextStyle(
   color: Colors.white,
-  fontSize: 24,
+  fontSize: 24.sp,
   fontFamily: 'poppinsLight',
   letterSpacing: 2.5,
 );
 
-const kBodySmallText = TextStyle(
+var kBodySmallText = TextStyle(
   color: Colors.white,
-  fontSize: 12,
+  fontSize: 12.sp,
   fontFamily: 'poppins',
 );
 
-const kBodyTextStyle = TextStyle(
+var kBodyTextStyle = TextStyle(
   color: Colors.white,
-  fontSize: 26,
+  fontSize: 26.sp,
   fontWeight: FontWeight.bold,
   fontFamily: 'poppins',
 );
 
-const kWelcomeText = TextStyle(
+var kWelcomeText = TextStyle(
   color: Colors.white,
-  fontSize: 26,
+  fontSize: 26.sp,
   fontFamily: 'poppinsLight',
 );
 
-const kOnboardingText = TextStyle(
+var kOnboardingText = TextStyle(
   color: Colors.white,
-  fontSize: 20,
+  fontSize: 20.sp,
   fontWeight: FontWeight.bold,
   fontFamily: 'poppins',
 );
 
-const kMyCardTextStyle = TextStyle(
+var kMyCardTextStyle = TextStyle(
   color: Colors.black,
-  fontSize: 35,
+  fontSize: 35.sp,
   fontWeight: FontWeight.bold,
   fontFamily: 'poppins',
 );
-const kMyCardSubTextStyle = TextStyle(
+var kMyCardSubTextStyle = TextStyle(
   color: Color.fromRGBO(97, 97, 97, 1),
-  fontSize: 13,
+  fontSize: 13.sp,
   fontWeight: FontWeight.bold,
   fontFamily: 'poppins',
 );
 
-const kCardCompanyName = TextStyle(
+var kCardCompanyName = TextStyle(
   color: Colors.black,
-  fontSize: 27,
+  fontSize: 27.sp,
   letterSpacing: 2.0,
 );
-const kCardCompanyMotive = TextStyle(
+var kCardCompanyMotive = TextStyle(
   color: Colors.blueAccent,
-  fontSize: 11,
+  fontSize: 11.sp,
 );
 
-const kCardName = TextStyle(
+var kCardName = TextStyle(
   color: Colors.black,
-  fontSize: 14,
+  fontSize: 14.sp,
   letterSpacing: 1.2,
   fontFamily: 'poppins',
   fontWeight: FontWeight.bold,
 );
 
-const kProfession = TextStyle(
+var kProfession = TextStyle(
   color: Colors.blueAccent,
-  fontSize: 9,
+  fontSize: 9.sp,
   letterSpacing: 1.2,
   fontFamily: 'poppins',
   fontWeight: FontWeight.bold,

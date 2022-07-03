@@ -32,7 +32,7 @@ class _SignInState extends State<SignIn> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.baseline,
                 textBaseline: TextBaseline.alphabetic,
-                children: const [
+                children: [
                   Text(
                     'Let\'s sign you in.',
                     style: kSignInHeadText,

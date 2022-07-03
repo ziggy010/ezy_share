@@ -3,6 +3,7 @@ import 'package:ezy_share/Screens/sign_in.dart';
 import 'package:ezy_share/components/reusable_button.dart';
 import 'package:ezy_share/components/text_fields.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../constant.dart';
 
@@ -17,7 +18,7 @@ class RegisterScreen extends StatelessWidget {
       resizeToAvoidBottomInset: false,
       backgroundColor: Colors.grey.shade900,
       body: Padding(
-        padding: const EdgeInsets.only(left: 30),
+        padding: EdgeInsets.only(left: 30.w),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           crossAxisAlignment: CrossAxisAlignment.baseline,
@@ -34,14 +35,14 @@ class RegisterScreen extends StatelessWidget {
                     children: [
                       Text(
                         'Discover your new,',
-                        style: kBodyTextStyle.copyWith(letterSpacing: 3.0),
+                        style: kBodyTextStyle.copyWith(letterSpacing: 3.0.sp),
                       ),
                       SizedBox(
-                        height: 10,
+                        height: 10.h,
                       ),
                       Text(
                         'Business card.',
-                        style: kWelcomeText.copyWith(letterSpacing: 3.0),
+                        style: kWelcomeText.copyWith(letterSpacing: 3.0.sp),
                       ),
                     ],
                   ),
@@ -49,7 +50,7 @@ class RegisterScreen extends StatelessWidget {
               ],
             ),
             Padding(
-              padding: const EdgeInsets.only(right: 30),
+              padding: EdgeInsets.only(right: 30.w),
               child: Container(
                 child: Column(
                   children: [
@@ -59,7 +60,7 @@ class RegisterScreen extends StatelessWidget {
                       onChanged: (value) {},
                     ),
                     SizedBox(
-                      height: 20,
+                      height: 20.h,
                     ),
                     ReusableTextField(
                       hintText: 'Phone number',
@@ -67,7 +68,7 @@ class RegisterScreen extends StatelessWidget {
                       onChanged: (value) {},
                     ),
                     SizedBox(
-                      height: 20,
+                      height: 20.h,
                     ),
                     ReusableTextField(
                       keyboardType: TextInputType.emailAddress,
@@ -76,7 +77,7 @@ class RegisterScreen extends StatelessWidget {
                       onChanged: (value) {},
                     ),
                     SizedBox(
-                      height: 20,
+                      height: 20.h,
                     ),
                     ReusableTextField(
                       hintText: 'Address',
@@ -84,7 +85,7 @@ class RegisterScreen extends StatelessWidget {
                       onChanged: (value) {},
                     ),
                     SizedBox(
-                      height: 20,
+                      height: 20.h,
                     ),
                     ReusableTextField(
                       icon: Icon(
@@ -126,13 +127,13 @@ class RegisterScreen extends StatelessWidget {
                     ),
                   ),
                   SizedBox(
-                    height: 20,
+                    height: 20.h,
                   ),
                   ReusableButton(
                       specificText: 'More',
                       specificColor: Colors.white,
                       textStyle: kButtonText,
-                      width: 300,
+                      width: 300.w,
                       onTap: () {
                         Navigator.pushNamed(context, CardScreen.id);
                       }),

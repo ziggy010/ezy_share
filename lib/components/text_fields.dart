@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ReusableTextField extends StatelessWidget {
   final String hintText;
@@ -35,13 +36,13 @@ class ReusableTextField extends StatelessWidget {
         suffixIcon: icon,
         enabledBorder: OutlineInputBorder(
           borderSide: BorderSide(color: Colors.grey.shade700),
-          borderRadius: BorderRadius.circular(15),
+          borderRadius: BorderRadius.circular(15.r),
         ),
         focusedBorder: OutlineInputBorder(
           borderSide: BorderSide(
             color: Colors.grey.shade700,
           ),
-          borderRadius: BorderRadius.circular(15),
+          borderRadius: BorderRadius.circular(15.r),
         ),
         hintText: hintText,
         hintStyle: TextStyle(

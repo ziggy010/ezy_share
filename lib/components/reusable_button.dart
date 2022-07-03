@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ReusableButton extends StatelessWidget {
   final String specificText;
@@ -25,7 +26,7 @@ class ReusableButton extends StatelessWidget {
           specificText,
           style: textStyle,
         ),
-        height: 70,
+        height: 70.h,
         width: width,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(20),

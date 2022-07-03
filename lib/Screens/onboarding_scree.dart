@@ -69,8 +69,9 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                 ),
                 isOnLastPage
                     ? GestureDetector(
-                        onTap: () {
-                          Navigator.pushNamed(context, HomePage.id);
+                        onTap: () async {
+                          await Navigator.pushNamed(context, HomePage.id);
+                          Navigator.pop(context);
                         },
                         child: Text(
                           'DONE',

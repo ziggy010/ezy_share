@@ -2,6 +2,7 @@ import 'package:ezy_share/constant.dart';
 import 'package:ezy_share/Screens/qr_code.dart';
 import 'package:flutter/material.dart';
 import 'package:ezy_share/Screens/navbar.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../components/reusable_cards.dart';
 
@@ -29,31 +30,31 @@ class _HomeState extends State<Home> {
           children: [
             Positioned(
               child: Container(
-                height: 200,
+                height: 200.h,
                 width: double.infinity,
-                decoration: const BoxDecoration(
+                decoration: BoxDecoration(
                   color: Colors.blue,
                   borderRadius: BorderRadius.only(
-                    bottomLeft: Radius.elliptical(180.0, 70.0),
-                    bottomRight: Radius.elliptical(180.0, 70.0),
+                    bottomLeft: Radius.elliptical(180.0.r, 70.0.r),
+                    bottomRight: Radius.elliptical(180.0.r, 70.0.r),
                   ),
                 ),
               ),
             ),
             Padding(
-              padding: const EdgeInsets.all(35.0),
+              padding: EdgeInsets.all(35.0.sm),
               child: Container(
-                height: 570,
-                width: 400,
+                height: 570.h,
+                width: 400.w,
                 decoration: BoxDecoration(
                   color: Colors.grey.shade300,
-                  borderRadius: const BorderRadius.all(
-                    Radius.circular(18.0),
+                  borderRadius: BorderRadius.all(
+                    Radius.circular(18.0.r),
                   ),
                 ),
                 child: Padding(
                   padding:
-                      const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+                      EdgeInsets.symmetric(horizontal: 20.h, vertical: 20.w),
                   child: SingleChildScrollView(
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -62,27 +63,27 @@ class _HomeState extends State<Home> {
                           'My cards',
                           style: kMyCardTextStyle,
                         ),
-                        const SizedBox(
-                          height: 5,
+                        SizedBox(
+                          height: 5.h,
                         ),
-                        const Text(
+                        Text(
                           'Choose your cards',
                           style: kMyCardSubTextStyle,
                         ),
-                        const SizedBox(
-                          height: 30,
+                        SizedBox(
+                          height: 30.h,
                         ),
                         ReusableCards(),
                         SizedBox(
-                          height: 15,
+                          height: 15.h,
                         ),
                         ReusableCards(),
                         SizedBox(
-                          height: 15,
+                          height: 15.h,
                         ),
                         ReusableCards(),
                         SizedBox(
-                          height: 15,
+                          height: 15.h,
                         ),
                         ReusableCards(),
                       ],
@@ -101,9 +102,9 @@ class _HomeState extends State<Home> {
           onPressed: () => Navigator.push(
               context, MaterialPageRoute(builder: (context) => ScanQrPage())),
           elevation: 2.0,
-          child: const Icon(
+          child: Icon(
             Icons.qr_code_rounded,
-            size: 48,
+            size: 48.sm,
           ),
         ),
       ),
@@ -120,14 +121,14 @@ class BottomNavigationView extends StatelessWidget {
     return Transform.translate(
       offset: const Offset(0.0, -10),
       child: Container(
-        margin: const EdgeInsets.symmetric(horizontal: 10),
-        padding: const EdgeInsets.symmetric(horizontal: 20),
+        margin: EdgeInsets.symmetric(horizontal: 10.w),
+        padding: EdgeInsets.symmetric(horizontal: 20.w),
         decoration: ShapeDecoration(
           color: Colors.blueAccent,
           shape: MyBorderShape(),
-          shadows: const [
+          shadows: [
             BoxShadow(
-                color: Colors.black38, blurRadius: 8.0, offset: Offset(1, 1)),
+                color: Colors.black38, blurRadius: 8.0.r, offset: Offset(1, 1)),
           ],
         ),
         child: Row(

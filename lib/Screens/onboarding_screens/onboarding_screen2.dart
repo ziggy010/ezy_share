@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lottie/lottie.dart';
 import 'package:ezy_share/constant.dart';
 
@@ -10,32 +11,33 @@ class Screen2 extends StatelessWidget {
       body: SafeArea(
         child: Container(
           child: Padding(
-            padding: const EdgeInsets.only(bottom: 50),
+            padding: EdgeInsets.only(bottom: 50.h),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 30),
+                  padding: EdgeInsets.symmetric(horizontal: 30.w),
                   child: Column(
                     children: [
                       Text(
                         'No worries, now we got your back!',
-                        style: kOnboardingText.copyWith(fontSize: 28),
+                        style: kOnboardingText.copyWith(fontSize: 28.sp),
                         textAlign: TextAlign.center,
                       ),
                       SizedBox(
-                        height: 20,
+                        height: 20.h,
                       ),
                       Text(
                         'With this new app, you can easily store all your business cards in single app in a few clicks!',
-                        style: kWelcomeText.copyWith(fontSize: 17),
+                        style: kWelcomeText.copyWith(fontSize: 17.sp),
                         textAlign: TextAlign.center,
                       ),
                       SizedBox(
-                        height: 50,
+                        height: 50.h,
                       ),
                       Lottie.network(
                         'https://assets4.lottiefiles.com/packages/lf20_oj5zw0yb.json',
+                        height: 350.h,
                       ),
                     ],
                   ),

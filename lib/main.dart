@@ -7,6 +7,7 @@ import 'package:ezy_share/Screens/settings.dart';
 import 'package:ezy_share/Screens/sign_in.dart';
 import 'package:ezy_share/Screens/my_account.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 void main() {
   runApp(MyApp());
@@ -15,19 +16,22 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      initialRoute: OnboardingScreen.id,
-      routes: {
-        OnboardingScreen.id: (context) => OnboardingScreen(),
-        HomePage.id: (context) => HomePage(),
-        SignIn.id: (context) => SignIn(),
-        RegisterScreen.id: (context) => RegisterScreen(),
-        CardScreen.id: (context) => CardScreen(),
-        ProfileScreen.id: (context) => ProfileScreen(),
-        SettingsScreen.id: (context) => SettingsScreen(),
-        FAQ.id: (context) => FAQ(),
-      },
+    return ScreenUtilInit(
+      builder: (context, child) => MaterialApp(
+        debugShowCheckedModeBanner: false,
+        initialRoute: OnboardingScreen.id,
+        routes: {
+          OnboardingScreen.id: (context) => OnboardingScreen(),
+          HomePage.id: (context) => HomePage(),
+          SignIn.id: (context) => SignIn(),
+          RegisterScreen.id: (context) => RegisterScreen(),
+          CardScreen.id: (context) => CardScreen(),
+          ProfileScreen.id: (context) => ProfileScreen(),
+          SettingsScreen.id: (context) => SettingsScreen(),
+          FAQ.id: (context) => FAQ(),
+        },
+      ),
+      designSize: const Size(390, 844),
     );
   }
 }
