@@ -102,6 +102,7 @@ class CardDetailLines extends StatelessWidget {
         Icon(
           specificIcon,
           size: 12.sm,
+          color: Colors.black,
         ),
         SizedBox(
           width: 10.w,
@@ -109,6 +110,7 @@ class CardDetailLines extends StatelessWidget {
         Text(
           info,
           style: TextStyle(
+            color: Colors.black,
             fontFamily: 'poppins',
             fontSize: 9.sp,
             fontWeight: FontWeight.bold,

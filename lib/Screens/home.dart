@@ -1,3 +1,5 @@
+// ignore_for_file: unnecessary_new
+
 import 'package:ezy_share/Screens/profile_screen.dart';
 import 'package:ezy_share/Screens/saved_card_screen.dart';
 import 'package:ezy_share/components/reusable_cards_premium.dart';
@@ -11,6 +13,7 @@ import '../components/reusable_cards_normal.dart';
 
 class Home extends StatefulWidget {
   @override
+  static const String id = 'SavedCardScreen';
   _HomeState createState() => _HomeState();
 }
 
@@ -38,7 +41,7 @@ class _HomeState extends State<Home> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    'Hi, User!',
+                    'Hi, Bibek!',
                     style: TextStyle(
                       color: Colors.white,
                       fontSize: 27.sp,
@@ -80,10 +83,10 @@ class _HomeState extends State<Home> {
                     child: PageSeperator(
                       specificText: 'Normal',
                       textColor: pageClicked == inPage.normal
-                          ? Colors.white
+                          ? Colors.green
                           : Colors.grey.shade500,
                       borderColor: pageClicked == inPage.normal
-                          ? Colors.white
+                          ? Colors.green
                           : Colors.transparent,
                     ),
                   ),
@@ -100,10 +103,10 @@ class _HomeState extends State<Home> {
                     child: PageSeperator(
                       specificText: 'Premium',
                       textColor: pageClicked == inPage.premium
-                          ? Colors.white
+                          ? Colors.green
                           : Colors.grey.shade500,
                       borderColor: pageClicked == inPage.premium
-                          ? Colors.white
+                          ? Colors.green
                           : Colors.transparent,
                     ),
                   ),
@@ -136,7 +139,20 @@ class _HomeState extends State<Home> {
                             SizedBox(
                               height: 10.h,
                             ),
-                            ReusableCardsNormal(),
+                            ElevatedButton(
+                              style: ElevatedButton.styleFrom(
+                                primary:
+                                    Colors.grey.shade900, // Background color
+                              ),
+                              onPressed: () {
+                                showDialog(
+                                  context: context,
+                                  builder: (BuildContext context) =>
+                                      _buildAboutDialog(context),
+                                );
+                              },
+                              child: ReusableCardsNormal(),
+                            ),
                             SizedBox(
                               height: 40.h,
                             ),
@@ -203,6 +219,42 @@ class _HomeState extends State<Home> {
         ),
       ),
       bottomNavigationBar: const BottomNavigationView(),
+    );
+  }
+
+  Widget _buildAboutDialog(BuildContext context) {
+    return Container(
+      child: new AlertDialog(
+        backgroundColor: Colors.grey.shade900,
+        title: const Text(''),
+        content: new Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.end,
+          children: <Widget>[
+            _buildLogoAttribution(),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _buildLogoAttribution() {
+    return Container(
+      child: new Row(
+        children: <Widget>[
+          new Image.asset(
+            "lib/image/card.jpg",
+            height: 500.0,
+            width: 300.0,
+          ),
+
+          // const Expanded(
+          //   child: Padding(
+          //     padding: const EdgeInsets.only(left: 12.0),
+          //   ),
+          // ),
+        ],
+      ),
     );
   }
 }

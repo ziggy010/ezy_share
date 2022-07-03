@@ -47,6 +47,7 @@ dependencies:
   url_launcher: ^6.1.4
   font_awesome_flutter: ^10.1.0
   toggle_switch: ^2.0.1
+  image_gallery_saver: ^1.7.1
 
 dev_dependencies:
   flutter_test:

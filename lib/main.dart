@@ -1,6 +1,7 @@
 import 'package:ezy_share/Screens/about_us.dart';
 import 'package:ezy_share/Screens/card_details.dart';
 import 'package:ezy_share/Screens/faq.dart';
+import 'package:ezy_share/Screens/home.dart';
 import 'package:ezy_share/Screens/homepage.dart';
 import 'package:ezy_share/Screens/onboarding_scree.dart';
 import 'package:ezy_share/Screens/profile_screen.dart';
@@ -15,10 +16,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
@@ -27,6 +30,7 @@ class MyApp extends StatelessWidget {
         initialRoute: OnboardingScreen.id,
         routes: {
           OnboardingScreen.id: (context) => OnboardingScreen(),
+          Home.id: (context) => Home(),
           HomePage.id: (context) => HomePage(),
           SignIn.id: (context) => SignIn(),
           RegisterScreen.id: (context) => RegisterScreen(),

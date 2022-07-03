@@ -23,21 +23,21 @@ class _ProfileState extends State<Profile> {
       appBar: AppBar(
         bottomOpacity: 0,
         elevation: 0,
-        backgroundColor: Colors.blue,
+        backgroundColor: Colors.black,
         title: const Text("Profile"),
         centerTitle: true,
       ),
-      backgroundColor: Colors.black,
+      backgroundColor: Colors.grey.shade900,
       body: Column(
         children: [
           Container(
             height: 170,
             width: 450,
-            decoration: const BoxDecoration(
+            decoration: BoxDecoration(
               gradient: LinearGradient(
                   begin: Alignment.topCenter,
                   end: Alignment.bottomCenter,
-                  colors: [Colors.blue, Colors.black]),
+                  colors: [Colors.black, Colors.grey.shade900]),
               shape: BoxShape.rectangle,
             ),
             child: CircleAvatar(
@@ -63,7 +63,7 @@ class _ProfileState extends State<Profile> {
           Container(
             height: 498,
             width: 498,
-            color: Colors.black,
+            color: Colors.grey.shade900,
             child: ListView(children: [
               ListTile(
                 subtitle: const Text(
