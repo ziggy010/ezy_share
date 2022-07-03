@@ -6,6 +6,8 @@ import 'package:ezy_share/Screens/register_screen.dart';
 import 'package:ezy_share/Screens/settings.dart';
 import 'package:ezy_share/Screens/sign_in.dart';
 import 'package:ezy_share/Screens/my_account.dart';
+import 'package:ezy_share/contact.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
