@@ -1,3 +1,4 @@
+import 'package:ezy_share/Screens/homepage.dart';
 import 'package:ezy_share/Screens/sign_in.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
@@ -135,7 +136,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   height: 50,
                   width: 300,
                   child: ElevatedButton(
-                    onPressed: (() => SignIn()),
+                    onPressed: (() => HomePage.id),
                     style: ElevatedButton.styleFrom(
                         primary: Colors.lightBlue,
                         shape: RoundedRectangleBorder(

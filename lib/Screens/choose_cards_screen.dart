@@ -7,6 +7,8 @@ import '../components/reusable_cards_premium.dart';
 class ChooseCardScreen extends StatefulWidget {
   static const String id = 'ChooseCardScreen';
 
+  const ChooseCardScreen({Key? key}) : super(key: key);
+
   @override
   State<ChooseCardScreen> createState() => _ChooseCardScreenState();
 }
@@ -18,14 +20,14 @@ enum inPage {
 
 class _ChooseCardScreenState extends State<ChooseCardScreen> {
   inPage pageClicked = inPage.normal;
-  PageController _controller = PageController();
+  final PageController _controller = PageController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
-        title: Text('Choose your cards'),
+        title: const Text('Choose your cards'),
       ),
       backgroundColor: Colors.grey.shade900,
       body: Column(
@@ -81,7 +83,7 @@ class _ChooseCardScreenState extends State<ChooseCardScreen> {
           SizedBox(
             height: 40.h,
           ),
-          Container(
+          SizedBox(
             height: 600.h,
             child: PageView(
               controller: _controller,
@@ -93,7 +95,7 @@ class _ChooseCardScreenState extends State<ChooseCardScreen> {
                 });
               },
               children: [
-                Container(
+                SizedBox(
                   height: 240.h,
                   child: SingleChildScrollView(
                     child: Column(
@@ -129,7 +131,7 @@ class _ChooseCardScreenState extends State<ChooseCardScreen> {
                     ),
                   ),
                 ),
-                Container(
+                SizedBox(
                   height: 240.h,
                   child: SingleChildScrollView(
                     child: Column(
@@ -179,11 +181,12 @@ class PageSeperator extends StatelessWidget {
   final Color textColor;
   final Color borderColor;
 
-  PageSeperator({
+  const PageSeperator({
+    Key? key,
     required this.specificText,
     required this.textColor,
     required this.borderColor,
-  });
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -214,29 +217,17 @@ class PageSeperator extends StatelessWidget {
 }
 
 Widget _buildAboutDialog(BuildContext context) {
-  return Container(
-    child: new AlertDialog(
-      backgroundColor: Colors.grey.shade900,
-      title: const Text(''),
-      content: new Column(
-        mainAxisSize: MainAxisSize.min,
-        crossAxisAlignment: CrossAxisAlignment.end,
-        children: <Widget>[
-          _buildLogoAttribution(),
-        ],
-      ),
-    ),
-  );
-}
-
-Widget _buildLogoAttribution() {
-  return Container(
-    child: new Row(
+  return AlertDialog(
+    backgroundColor: Colors.grey.shade900,
+    title: const Text(''),
+    content: Column(
+      mainAxisSize: MainAxisSize.min,
+      crossAxisAlignment: CrossAxisAlignment.end,
       children: <Widget>[
-        new Image.asset(
+        Image.asset(
           "lib/image/card.jpg",
           height: 500.0.h,
-          width: 300.0.w,
+          width: 267.0.w,
         ),
       ],
     ),

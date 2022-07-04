@@ -129,3 +129,14 @@ var kAboutSub = TextStyle(
   fontFamily: 'poppins',
   fontSize: 12,
 );
+var kFaqHeading = TextStyle(
+  color: Colors.white,
+  fontSize: 17.sp,
+  fontFamily: 'poppins',
+  fontWeight: FontWeight.bold,
+);
+var kFaqContent = TextStyle(
+  color: Colors.grey.shade300,
+  fontSize: 13.sp,
+  fontFamily: 'poppins',
+);

@@ -49,6 +49,10 @@ dependencies:
   toggle_switch: ^2.0.1
   image_gallery_saver: ^1.7.1
   flutter_speed_dial: ^6.0.0
+  permission_handler: ^10.0.0
+  document_scanner: ^0.2.1
+  file_picker: ^3.0.4
+  circular_menu: ^2.0.1
 
 dev_dependencies:
   flutter_test:
