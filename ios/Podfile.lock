@@ -2,6 +2,8 @@ PODS:
   - Flutter (1.0.0)
   - flutter_phone_direct_caller (0.0.1):
     - Flutter
+  - image_gallery_saver (1.5.0):
+    - Flutter
   - image_picker_ios (0.0.1):
     - Flutter
   - MTBBarcodeScanner (5.0.11)
@@ -16,6 +18,7 @@ PODS:
 DEPENDENCIES:
   - Flutter (from `Flutter`)
   - flutter_phone_direct_caller (from `.symlinks/plugins/flutter_phone_direct_caller/ios`)
+  - image_gallery_saver (from `.symlinks/plugins/image_gallery_saver/ios`)
   - image_picker_ios (from `.symlinks/plugins/image_picker_ios/ios`)
   - path_provider_ios (from `.symlinks/plugins/path_provider_ios/ios`)
   - qr_code_scanner (from `.symlinks/plugins/qr_code_scanner/ios`)
@@ -30,6 +33,8 @@ EXTERNAL SOURCES:
     :path: Flutter
   flutter_phone_direct_caller:
     :path: ".symlinks/plugins/flutter_phone_direct_caller/ios"
+  image_gallery_saver:
+    :path: ".symlinks/plugins/image_gallery_saver/ios"
   image_picker_ios:
     :path: ".symlinks/plugins/image_picker_ios/ios"
   path_provider_ios:
@@ -42,6 +47,7 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   Flutter: 50d75fe2f02b26cc09d224853bb45737f8b3214a
   flutter_phone_direct_caller: bd2ffd297f371a8a6c7bfbba0196964ffe3c4358
+  image_gallery_saver: 259eab68fb271cfd57d599904f7acdc7832e7ef2
   image_picker_ios: b786a5dcf033a8336a657191401bfdf12017dabb
   MTBBarcodeScanner: f453b33c4b7dfe545d8c6484ed744d55671788cb
   path_provider_ios: 14f3d2fd28c4fdb42f44e0f751d12861c43cee02

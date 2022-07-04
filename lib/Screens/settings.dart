@@ -1,5 +1,7 @@
+import 'package:ezy_share/Screens/reset_password.dart';
 import 'package:flutter/material.dart';
-import 'package:settings_ui/settings_ui.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:toggle_switch/toggle_switch.dart';
 
 class SettingsScreen extends StatefulWidget {
   static const String id = 'settingScreen';
@@ -9,6 +11,8 @@ class SettingsScreen extends StatefulWidget {
 
 class _SettingsScreenState extends State<SettingsScreen> {
   bool lockInBackground = true;
+
+  bool isAccountClicked = false;
 
   @override
   Widget build(BuildContext context) {
@@ -21,74 +25,155 @@ class _SettingsScreenState extends State<SettingsScreen> {
         backgroundColor: Colors.grey.shade900,
       ),
       body: Container(
-        //decoration: BoxDecoration(color: Colors.red),
-        // height: 100,
-
-        child: SettingsList(
-          sections: [
-            SettingsSection(
-              title: const Text('Common'),
-              tiles: [
-                SettingsTile(
-                  title: const Text('Language'),
-                  //subtitle: const Text('English'),
-                  leading: const Icon(Icons.language),
-                ),
-                SettingsTile(
-                    title: const Text('Environment'),
-                    //subtitle: 'Production',
-                    leading: const Icon(Icons.cloud_queue)),
-              ],
+        height: 650.h,
+        width: 498.w,
+        color: Colors.grey.shade900,
+        child: ListView(children: [
+          ListTile(
+            leading: Icon(
+              Icons.person,
+              color: Colors.white,
             ),
-            SettingsSection(
-              title: const Text('Account'),
-              tiles: [
-                SettingsTile(
-                    title: const Text('Phone number'),
-                    leading: const Icon(Icons.phone)),
-                SettingsTile(
-                    title: const Text('Email'),
-                    leading: const Icon(Icons.email)),
-                SettingsTile(
-                    title: const Text('Sign out'),
-                    leading: const Icon(Icons.exit_to_app)),
-              ],
+            title: const Text(
+              'Account Preference',
+              style: TextStyle(color: Colors.white),
             ),
-            SettingsSection(
-              title: const Text('Secutiry'),
-              tiles: [
-                SettingsTile.switchTile(
-                  title: const Text('Lock app in background'),
-                  leading: const Icon(Icons.phonelink_lock),
-                  // switchValue: lockInBackground,
-                  onToggle: (bool value) {
-                    setState(() {
-                      lockInBackground = value;
-                    });
-                  },
-                  initialValue: null,
-                ),
-                SettingsTile.switchTile(
-                  title: const Text('Change account password'),
-                  leading: const Icon(Icons.lock),
-                  // switchValue: true,
-                  onToggle: (bool value) {}, initialValue: null,
-                ),
-              ],
+            trailing: Icon(
+              isAccountClicked
+                  ? Icons.keyboard_arrow_down_sharp
+                  : Icons.keyboard_arrow_right_outlined,
+              color: Colors.white,
             ),
-            SettingsSection(
-              title: const Text('Misc'),
-              tiles: [
-                SettingsTile(
-                    title: const Text('Terms of Service'),
-                    leading: const Icon(Icons.description)),
-                SettingsTile(
-                    title: const Text('Open source licenses'),
-                    leading: const Icon(Icons.collections_bookmark)),
-              ],
-            )
-          ],
-        ),
+            onTap: () {
+              setState(() {
+                isAccountClicked = !isAccountClicked;
+              });
+            },
+          ),
+          Visibility(
+            visible: isAccountClicked ? true : false,
+            child: ListTile(
+              title: const Text(
+                'Change Password',
+                style: TextStyle(color: Colors.white),
+              ),
+              leading: Icon(
+                Icons.password_sharp,
+                color: Colors.white,
+              ),
+              onTap: () {
+                Navigator.pushNamed(context, ResetPassword.id);
+              },
+            ),
+          ),
+          ListTile(
+            leading: Icon(
+              Icons.fingerprint,
+              color: Colors.white,
+            ),
+            title: const Text(
+              'Biometric',
+              style: TextStyle(color: Colors.white),
+            ),
+            trailing: const Icon(
+              Icons.keyboard_arrow_right_sharp,
+              color: Colors.white,
+            ),
+            onTap: () {},
+          ),
+          ListTile(
+            leading: Icon(
+              Icons.notifications,
+              color: Colors.white,
+            ),
+            title: const Text(
+              'Notification',
+              style: TextStyle(color: Colors.white),
+            ),
+            trailing: const Icon(
+              Icons.keyboard_arrow_right_sharp,
+              color: Colors.white,
+            ),
+            onTap: () {},
+          ),
+          const Divider(
+            color: Colors.white,
+          ),
+          ListTile(
+            leading: Icon(
+              Icons.privacy_tip,
+              color: Colors.white,
+            ),
+            title: const Text(
+              'Data Privacy',
+              style: TextStyle(color: Colors.white),
+            ),
+            trailing: const Icon(
+              Icons.keyboard_arrow_right_sharp,
+              color: Colors.white,
+            ),
+            onTap: () {},
+          ),
+          ListTile(
+            leading: const Icon(
+              Icons.policy_sharp,
+              color: Colors.white,
+            ),
+            title: const Text(
+              'Privacy Policy',
+              style: TextStyle(color: Colors.white),
+            ),
+            trailing: const Icon(
+              Icons.keyboard_arrow_right_sharp,
+              color: Colors.white,
+            ),
+            onTap: () {},
+          ),
+          ListTile(
+            leading: Icon(
+              Icons.handshake,
+              color: Colors.white,
+            ),
+            title: const Text(
+              'User Agreement',
+              style: TextStyle(color: Colors.white),
+            ),
+            trailing: const Icon(
+              Icons.keyboard_arrow_right_sharp,
+              color: Colors.white,
+            ),
+            onTap: () {},
+          ),
+          ListTile(
+            leading: Icon(
+              Icons.logout,
+              color: Colors.white,
+            ),
+            title: const Text(
+              'Sign out',
+              style: TextStyle(color: Colors.white),
+            ),
+            trailing: const Icon(
+              Icons.keyboard_arrow_right_sharp,
+              color: Colors.white,
+            ),
+            onTap: () {
+              Navigator.pushNamed(context, SettingsScreen.id);
+            },
+          ),
+          ListTile(
+            title: Center(
+              child: Padding(
+                padding: const EdgeInsets.only(top: 100),
+                child: const Text(
+                  //textAlign: TextAlign.center,
+                  'Version 1.1.2', style: TextStyle(color: Colors.white),
+                ),
+              ),
+            ),
+            onTap: () {},
+          ),
+        ]),
       ),
     );
   }

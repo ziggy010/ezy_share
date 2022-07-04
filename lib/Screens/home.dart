@@ -1,15 +1,19 @@
 // ignore_for_file: unnecessary_new
 
+import 'package:ezy_share/Screens/choose_cards_screen.dart';
+import 'package:ezy_share/Screens/homepage.dart';
 import 'package:ezy_share/Screens/profile_screen.dart';
 import 'package:ezy_share/Screens/saved_card_screen.dart';
-import 'package:ezy_share/components/reusable_cards_premium.dart';
-import 'package:ezy_share/constant.dart';
 import 'package:ezy_share/Screens/qr_code.dart';
+import 'package:ezy_share/components/citizenship_card.dart';
+import 'package:ezy_share/components/reusable_cards_premium.dart';
 import 'package:flutter/material.dart';
-import 'package:ezy_share/Screens/navbar.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_speed_dial/flutter_speed_dial.dart';
+import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
-import '../components/reusable_cards_normal.dart';
+import '../components/dashboard_raise_buttons.dart';
+import '../components/homepage_cards.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -17,283 +21,189 @@ class Home extends StatefulWidget {
   _HomeState createState() => _HomeState();
 }
 
-enum inPage {
-  normal,
-  premium,
-}
-
 class _HomeState extends State<Home> {
-  inPage pageClicked = inPage.normal;
   PageController _controller = PageController();
+  bool isOnHomePage = true;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.grey.shade900,
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.symmetric(
-            horizontal: 30,
-            vertical: 30,
+          padding: EdgeInsets.symmetric(
+            horizontal: 20.w,
+            vertical: 30.h,
           ),
           child: Column(
             children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    'Hi, Bibek!',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 27.sp,
-                      fontFamily: 'poppins',
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  GestureDetector(
-                    onTap: () {
-                      Navigator.pushNamed(context, Profile.id);
-                    },
-                    child: Container(
-                      height: 60,
-                      width: 60,
-                      decoration: BoxDecoration(
-                        color: Colors.grey.shade800,
-                        borderRadius: BorderRadius.circular(50),
-                      ),
-                      child: Image.asset(
-                        'lib/image/profile.png',
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-              SizedBox(
-                height: 50.h,
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  GestureDetector(
-                    onTap: () {
-                      setState(() {
-                        pageClicked = inPage.normal;
-                        _controller.jumpToPage(0);
-                      });
-                    },
-                    child: PageSeperator(
-                      specificText: 'Normal',
-                      textColor: pageClicked == inPage.normal
-                          ? Colors.green
-                          : Colors.grey.shade500,
-                      borderColor: pageClicked == inPage.normal
-                          ? Colors.green
-                          : Colors.transparent,
-                    ),
-                  ),
-                  SizedBox(
-                    width: 20.w,
-                  ),
-                  GestureDetector(
-                    onTap: () {
-                      setState(() {
-                        pageClicked = inPage.premium;
-                        _controller.jumpToPage(1);
-                      });
-                    },
-                    child: PageSeperator(
-                      specificText: 'Premium',
-                      textColor: pageClicked == inPage.premium
-                          ? Colors.green
-                          : Colors.grey.shade500,
-                      borderColor: pageClicked == inPage.premium
-                          ? Colors.green
-                          : Colors.transparent,
-                    ),
-                  ),
-                ],
-              ),
               Container(
-                height: 1.h,
-                color: Colors.grey.shade600,
-              ),
-              SizedBox(
-                height: 40.h,
-              ),
-              Container(
-                height: 465.h,
-                child: PageView(
-                  controller: _controller,
-                  onPageChanged: (value) {
-                    setState(() {
-                      value == 0
-                          ? pageClicked = inPage.normal
-                          : pageClicked = inPage.premium;
-                    });
-                  },
+                padding: EdgeInsets.all(20.sp),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(15.r),
+                  color: Colors.grey.shade900,
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.black,
+                      offset: Offset(3, 3),
+                      blurRadius: 15.r,
+                      spreadRadius: 1.r,
+                    ),
+                    BoxShadow(
+                      color: Colors.grey.shade800,
+                      offset: Offset(-3, -3),
+                      blurRadius: 15,
+                      spreadRadius: 1,
+                    ),
+                  ],
+                ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.baseline,
+                  textBaseline: TextBaseline.alphabetic,
                   children: [
-                    Container(
-                      height: 240.h,
-                      child: SingleChildScrollView(
-                        child: Column(
-                          children: [
-                            SizedBox(
-                              height: 10.h,
-                            ),
-                            ElevatedButton(
-                              style: ElevatedButton.styleFrom(
-                                primary:
-                                    Colors.grey.shade900, // Background color
-                              ),
-                              onPressed: () {
-                                showDialog(
-                                  context: context,
-                                  builder: (BuildContext context) =>
-                                      _buildAboutDialog(context),
-                                );
-                              },
-                              child: ReusableCardsNormal(),
-                            ),
-                            SizedBox(
-                              height: 40.h,
-                            ),
-                            ReusableCardsNormal(),
-                            SizedBox(
-                              height: 40.h,
-                            ),
-                            ReusableCardsNormal(),
-                            SizedBox(
-                              height: 10.h,
-                            ),
-                          ],
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          'Hi, Bibek!',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 27.sp,
+                            fontFamily: 'poppins',
+                            fontWeight: FontWeight.bold,
+                          ),
                         ),
-                      ),
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.pushNamed(context, Profile.id);
+                          },
+                          child: Container(
+                            height: 60.h,
+                            width: 60.w,
+                            decoration: BoxDecoration(
+                              color: Colors.grey.shade800,
+                              borderRadius: BorderRadius.circular(50),
+                            ),
+                            child: Image.asset(
+                              'lib/image/profile.png',
+                              height: 60.h,
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
-                    Container(
-                      height: 240.h,
-                      child: SingleChildScrollView(
-                        child: Column(
-                          children: [
-                            SizedBox(
-                              height: 10.h,
-                            ),
-                            ReusableCardsPremium(),
-                            SizedBox(
-                              height: 40.h,
-                            ),
-                            ReusableCardsPremium(),
-                            SizedBox(
-                              height: 40.h,
-                            ),
-                            ReusableCardsPremium(),
-                            SizedBox(
-                              height: 40.h,
-                            ),
-                            ReusableCardsPremium(),
-                            SizedBox(
-                              height: 15.h,
-                            ),
-                          ],
-                        ),
-                      ),
+                    SizedBox(
+                      height: 20.h,
+                    ),
+                    DashboardButtons(
+                      buttonText: 'Change your card',
+                      onPressed: () {
+                        Navigator.pushNamed(context, ChooseCardScreen.id);
+                      },
+                    ),
+                    DashboardButtons(
+                      buttonText: 'Your saved cards',
+                      onPressed: () {
+                        Navigator.pushNamed(context, SavedCard.id);
+                      },
                     ),
                   ],
                 ),
               ),
+              SizedBox(
+                height: 40.h,
+              ),
+              Text(
+                'My documents',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 22.sp,
+                  fontFamily: 'poppins',
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              SizedBox(
+                height: 30.h,
+              ),
+              Container(
+                height: 280.h,
+                child: PageView(
+                  controller: _controller,
+                  children: [
+                    BussinessCardHomeScreen(
+                      cardType: 'Business Card',
+                    ),
+                    CitizenshipCard(
+                      cardType: 'Citizenship Card',
+                      specificImage: Image.asset(
+                        'lib/image/nagrita.jpeg',
+                      ),
+                    ),
+                    BussinessCardHomeScreen(
+                      cardType: 'License',
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(
+                height: 20.h,
+              ),
+              SmoothPageIndicator(
+                controller: _controller,
+                count: 3,
+                effect: ExpandingDotsEffect(
+                  activeDotColor: Colors.white,
+                ),
+              )
             ],
           ),
         ),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      floatingActionButton: Transform.translate(
-        offset: const Offset(0, -10),
-        child: FloatingActionButton(
-          backgroundColor: Colors.transparent,
-          onPressed: () => Navigator.push(
-              context, MaterialPageRoute(builder: (context) => ScanQrPage())),
-          elevation: 2.0,
-          child: Icon(
-            Icons.qr_code_rounded,
-            size: 48.sm,
-            color: Colors.grey.shade500,
-          ),
-        ),
-      ),
-      bottomNavigationBar: const BottomNavigationView(),
-    );
-  }
-
-  Widget _buildAboutDialog(BuildContext context) {
-    return Container(
-      child: new AlertDialog(
-        backgroundColor: Colors.grey.shade900,
-        title: const Text(''),
-        content: new Column(
-          mainAxisSize: MainAxisSize.min,
-          crossAxisAlignment: CrossAxisAlignment.end,
-          children: <Widget>[
-            _buildLogoAttribution(),
+      floatingActionButton: Padding(
+        padding: const EdgeInsets.only(bottom: 20),
+        child: SpeedDial(
+          icon: Icons.add,
+          activeIcon: Icons.close,
+          backgroundColor: Colors.grey.shade800,
+          foregroundColor: Colors.white,
+          activeBackgroundColor: Colors.red,
+          activeForegroundColor: Colors.white,
+          visible: true,
+          closeManually: false,
+          curve: Curves.bounceIn,
+          overlayColor: Colors.black,
+          overlayOpacity: 0.5,
+          elevation: 8.0,
+          shape: const CircleBorder(),
+          children: [
+            SpeedDialChild(
+              child: const Icon(Icons.qr_code_2_rounded),
+              backgroundColor: Colors.black,
+              foregroundColor: Colors.white,
+              label: 'QR scan',
+              labelStyle: const TextStyle(fontSize: 18.0),
+            ),
+            SpeedDialChild(
+              child: const Icon(Icons.document_scanner),
+              backgroundColor: Colors.black,
+              foregroundColor: Colors.white,
+              label: 'Nagarikta ',
+              labelStyle: const TextStyle(fontSize: 18.0),
+            ),
+            SpeedDialChild(
+              child: const Icon(Icons.document_scanner_rounded),
+              foregroundColor: Colors.white,
+              backgroundColor: Colors.black,
+              label: 'license',
+              labelStyle: TextStyle(
+                fontSize: 18.0,
+              ),
+            ),
           ],
         ),
       ),
-    );
-  }
-
-  Widget _buildLogoAttribution() {
-    return Container(
-      child: new Row(
-        children: <Widget>[
-          new Image.asset(
-            "lib/image/card.jpg",
-            height: 500.0,
-            width: 300.0,
-          ),
-
-          // const Expanded(
-          //   child: Padding(
-          //     padding: const EdgeInsets.only(left: 12.0),
-          //   ),
-          // ),
-        ],
-      ),
-    );
-  }
-}
-
-class PageSeperator extends StatelessWidget {
-  final String specificText;
-  final Color textColor;
-  final Color borderColor;
-
-  PageSeperator({
-    required this.specificText,
-    required this.textColor,
-    required this.borderColor,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        border: Border(
-          bottom: BorderSide(
-            width: 1,
-            color: borderColor,
-          ),
-        ),
-      ),
-      child: Padding(
-        padding: const EdgeInsets.symmetric(
-          horizontal: 10,
-        ),
-        child: Text(
-          specificText,
-          style: TextStyle(
-            color: textColor,
-            fontSize: 17,
-            fontFamily: 'poppins',
-          ),
-        ),
-      ),
+      bottomNavigationBar: const BottomNavigationView(),
     );
   }
 }
@@ -320,11 +230,7 @@ class BottomNavigationView extends StatelessWidget {
           mainAxisSize: MainAxisSize.max,
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: <Widget>[
-            Icon(
-              Icons.home,
-              size: 40,
-              color: Colors.grey.shade500,
-            ),
+            Icon(Icons.home, size: 40, color: Colors.grey.shade400),
             _buildMiddleTabItem(),
             GestureDetector(
               onTap: () {

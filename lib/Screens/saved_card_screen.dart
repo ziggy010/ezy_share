@@ -3,65 +3,92 @@ import 'package:ezy_share/Screens/homepage.dart';
 import 'package:ezy_share/Screens/qr_code.dart';
 import 'package:ezy_share/components/reusable_cards_premium.dart';
 import 'package:ezy_share/components/text_fields.dart';
+import 'package:ezy_share/main.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class SavedCard extends StatelessWidget {
+class SavedCard extends StatefulWidget {
   static const String id = 'SavedCardScreen';
 
   @override
+  State<SavedCard> createState() => _SavedCardState();
+}
+
+class _SavedCardState extends State<SavedCard> {
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        title: Text(
+          'Saved cards',
+          style: TextStyle(
+            color: Colors.white,
+            fontFamily: 'poppins',
+            fontSize: 26.sp,
+          ),
+        ),
+        elevation: 0,
+      ),
       backgroundColor: Colors.grey.shade900,
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.symmetric(
-            horizontal: 30,
-            vertical: 30,
+          padding: EdgeInsets.only(
+            left: 20,
+            right: 20,
+            top: 10,
+            bottom: 50,
           ),
           child: SingleChildScrollView(
             child: Column(
               children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Visibility(
-                      visible: true,
-                      child: Text(
-                        'Saved cards',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontFamily: 'poppins',
-                          fontSize: 26.sp,
+                Padding(
+                  padding: const EdgeInsets.only(
+                    left: 23,
+                  ),
+                  child: Container(
+                    height: 90.h,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        Expanded(
+                          child: ReusableTextField(
+                            hintText: 'Search',
+                            labelText: 'Search',
+                            onChanged: (value) {},
+                            icon: Icon(
+                              Icons.search_outlined,
+                              color: Colors.grey.shade600,
+                              size: 40.sm,
+                            ),
+                          ),
                         ),
-                      ),
+                        SizedBox(
+                          width: 20.w,
+                        ),
+                      ],
                     ),
-                    Icon(
-                      Icons.search_outlined,
-                      color: Colors.white,
-                      size: 30.sm,
-                    ),
-                  ],
+                  ),
                 ),
                 SizedBox(
-                  height: 50.h,
+                  height: 20.h,
                 ),
-                Column(
-                  children: [
-                    ReusableCardsPremium(),
-                    SizedBox(
-                      height: 30.h,
-                    ),
-                    ReusableCardsPremium(),
-                    SizedBox(
-                      height: 30.h,
-                    ),
-                    ReusableCardsPremium(),
-                    SizedBox(
-                      height: 30.h,
-                    ),
-                    ReusableCardsPremium(),
-                  ],
+                Container(
+                  height: 500.h,
+                  width: 350.h,
+                  child: ListView.builder(
+                    itemCount: 3,
+                    itemBuilder: ((context, index) {
+                      return Padding(
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 5, vertical: 15),
+                        child: ReusableCardsPremium(
+                          fullname: 'Risab Tajale',
+                          companyName: 'Ezy share',
+                        ),
+                      );
+                    }),
+                  ),
                 ),
               ],
             ),

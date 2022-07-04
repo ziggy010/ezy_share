@@ -4,6 +4,10 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class ReusableCardsPremium extends StatelessWidget {
+  final String fullname;
+  final String companyName;
+
+  ReusableCardsPremium({required this.fullname, required this.companyName});
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -43,7 +47,7 @@ class ReusableCardsPremium extends StatelessWidget {
                 height: 5.h,
               ),
               Text(
-                'Ezy Share',
+                companyName,
                 style: GoogleFonts.bebasNeue(
                     textStyle: kCardCompanyName.copyWith(
                   color: Colors.grey.shade100,
@@ -70,7 +74,7 @@ class ReusableCardsPremium extends StatelessWidget {
             children: [
               //name text
               Text(
-                'Risab Tajale',
+                fullname,
                 style: kCardName.copyWith(
                   color: Colors.white,
                 ),

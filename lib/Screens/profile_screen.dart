@@ -1,4 +1,5 @@
 import 'package:ezy_share/Screens/about_us.dart';
+import 'package:ezy_share/Screens/choose_cards_screen.dart';
 import 'package:ezy_share/Screens/faq.dart';
 import 'package:ezy_share/Screens/my_account.dart';
 import 'package:ezy_share/Screens/saved_card_screen.dart';
@@ -122,6 +123,19 @@ class _ProfileState extends State<Profile> {
               ),
               const Divider(
                 color: Colors.white,
+              ),
+              ListTile(
+                title: const Text(
+                  'Change your cards',
+                  style: TextStyle(color: Colors.white),
+                ),
+                trailing: const Icon(
+                  Icons.keyboard_arrow_right_sharp,
+                  color: Colors.white,
+                ),
+                onTap: () {
+                  Navigator.pushNamed(context, ChooseCardScreen.id);
+                },
               ),
               ListTile(
                 title: const Text(
