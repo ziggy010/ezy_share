@@ -1,7 +1,9 @@
 import 'package:ezy_share/Screens/saved_pop_up_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../constant.dart';
 
@@ -106,23 +108,50 @@ class PopUpScreen1 extends StatelessWidget {
                   SizedBox(
                     height: 15.h,
                   ),
-                  PopUpCardInlineDetails(
-                    specificIcon: Icons.phone,
-                    content: phoneNumber,
+                  GestureDetector(
+                    child: PopUpCardInlineDetails(
+                      specificIcon: Icons.phone,
+                      content: phoneNumber,
+                    ),
+                    onTap: () {
+                      FlutterPhoneDirectCaller.callNumber("9803836536");
+                    },
                   ),
                   SizedBox(
                     height: 15.h,
                   ),
-                  PopUpCardInlineDetails(
-                    specificIcon: Icons.email_outlined,
-                    content: email,
+                  GestureDetector(
+                    child: PopUpCardInlineDetails(
+                      specificIcon: Icons.email_outlined,
+                      content: email,
+                    ),
+                    onTap: () async {
+                      const toEmail = 'bibekshrestha242@gmail.com';
+                      const subject = 'Hello sir, ';
+                      const message = 'Hello its me';
+                      final url =
+                          'mailto:$toEmail?subject=${Uri.encodeFull(subject)}&body=${Uri.encodeFull(message)}';
+                      if (await canLaunch(url)) {
+                        await launch(url);
+                      }
+                    },
                   ),
                   SizedBox(
                     height: 15.h,
                   ),
-                  PopUpCardInlineDetails(
-                    specificIcon: Icons.language_outlined,
-                    content: website,
+                  GestureDetector(
+                    child: PopUpCardInlineDetails(
+                      specificIcon: Icons.language_outlined,
+                      content: website,
+                    ),
+                    onTap: () async {
+                      const url = 'https://www.shresthaventures.com/';
+                      if (await canLaunch(url)) {
+                        await launch(url);
+                      } else {
+                        throw 'Could not launch $url';
+                      }
+                    },
                   ),
                 ],
               ),

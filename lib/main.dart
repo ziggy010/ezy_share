@@ -7,10 +7,11 @@ import 'package:ezy_share/Screens/home.dart';
 import 'package:ezy_share/Screens/homepage.dart';
 import 'package:ezy_share/Screens/onboarding_scree.dart';
 import 'package:ezy_share/Screens/profile_screen.dart';
+import 'package:ezy_share/Screens/qr_code.dart';
 import 'package:ezy_share/Screens/register_screen.dart';
 import 'package:ezy_share/Screens/reset_password.dart';
 import 'package:ezy_share/Screens/saved_card_screen.dart';
-import 'package:ezy_share/Screens/saved_pop_up_screen.dart';
+//import 'package:ezy_share/Screens/saved_pop_up_screen.dart';
 import 'package:ezy_share/Screens/settings.dart';
 import 'package:ezy_share/Screens/sign_in.dart';
 import 'package:ezy_share/Screens/my_account.dart';
@@ -49,6 +50,7 @@ class MyApp extends StatelessWidget {
           ChooseCardScreen.id: (context) => const ChooseCardScreen(),
           ResetPassword.id: (context) => ResetPassword(),
           DocumentScan.id: (context) => const DocumentScan(),
+          ScanQrPage.id: (context) => ScanQrPage(),
         },
       ),
       designSize: const Size(390, 844),

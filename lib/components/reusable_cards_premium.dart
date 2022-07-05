@@ -2,6 +2,7 @@ import 'package:ezy_share/Screens/pop_up_screen1.dart';
 import 'package:ezy_share/Screens/saved_pop_up_screen.dart';
 import 'package:ezy_share/constant.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -122,10 +123,12 @@ class ReusableCardsPremium extends StatelessWidget {
                   SizedBox(
                     height: 10.h,
                   ),
+
                   CardDetailLines(
                     specificIcon: Icons.call,
                     info: phoneNumber,
                   ),
+
                   SizedBox(
                     height: 10.h,
                   ),

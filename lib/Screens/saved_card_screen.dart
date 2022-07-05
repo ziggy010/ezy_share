@@ -85,7 +85,7 @@ class _SavedCardState extends State<SavedCard> {
                         companyName: 'abc company',
                         companyMotive: 'Share and connect',
                         profession: 'App Developer',
-                        phoneNumber: '+977 9813110577',
+                        phoneNumber: '+977 9803836536',
                         email: 'tajale01@gmailw.com',
                         website: 'shresthaventures.com',
                       ),

@@ -186,6 +186,9 @@ class _HomeState extends State<Home> {
               label: 'QR scan',
               labelBackgroundColor: Colors.grey.shade800,
               labelStyle: const TextStyle(fontSize: 18.0, color: Colors.white),
+              onTap: () {
+                Navigator.pushNamed(context, ScanQrPage.id);
+              },
             ),
             SpeedDialChild(
               child: const Icon(Icons.document_scanner),
