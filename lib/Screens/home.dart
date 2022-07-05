@@ -1,6 +1,7 @@
 // ignore_for_file: unnecessary_new
 
 import 'package:ezy_share/Screens/choose_cards_screen.dart';
+import 'package:ezy_share/Screens/document_scan.dart';
 import 'package:ezy_share/Screens/homepage.dart';
 import 'package:ezy_share/Screens/profile_screen.dart';
 import 'package:ezy_share/Screens/saved_card_screen.dart';
@@ -17,7 +18,7 @@ import '../components/homepage_cards.dart';
 
 class Home extends StatefulWidget {
   @override
-  static const String id = 'SavedCardScreen';
+  static const String id = 'Home.id';
   _HomeState createState() => _HomeState();
 }
 
@@ -163,6 +164,7 @@ class _HomeState extends State<Home> {
       floatingActionButton: Padding(
         padding: const EdgeInsets.only(bottom: 20),
         child: SpeedDial(
+          direction: SpeedDialDirection.up,
           icon: Icons.add,
           activeIcon: Icons.close,
           backgroundColor: Colors.grey.shade800,
@@ -182,23 +184,30 @@ class _HomeState extends State<Home> {
               backgroundColor: Colors.black,
               foregroundColor: Colors.white,
               label: 'QR scan',
-              labelStyle: const TextStyle(fontSize: 18.0),
+              labelBackgroundColor: Colors.grey.shade800,
+              labelStyle: const TextStyle(fontSize: 18.0, color: Colors.white),
             ),
             SpeedDialChild(
               child: const Icon(Icons.document_scanner),
               backgroundColor: Colors.black,
               foregroundColor: Colors.white,
               label: 'Nagarikta ',
-              labelStyle: const TextStyle(fontSize: 18.0),
+              labelBackgroundColor: Colors.grey.shade800,
+              labelStyle: const TextStyle(fontSize: 18.0, color: Colors.white),
+              onTap: () {
+                Navigator.pushNamed(context, DocumentScan.id);
+              },
             ),
             SpeedDialChild(
               child: const Icon(Icons.document_scanner_rounded),
               foregroundColor: Colors.white,
               backgroundColor: Colors.black,
               label: 'license',
-              labelStyle: TextStyle(
-                fontSize: 18.0,
-              ),
+              labelBackgroundColor: Colors.grey.shade800,
+              labelStyle: const TextStyle(fontSize: 18.0, color: Colors.white),
+              onTap: () {
+                Navigator.pushNamed(context, DocumentScan.id);
+              },
             ),
           ],
         ),

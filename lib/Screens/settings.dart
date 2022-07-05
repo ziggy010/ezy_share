@@ -30,7 +30,13 @@ class _SettingsScreenState extends State<SettingsScreen> {
         color: Colors.grey.shade900,
         child: ListView(children: [
           ListTile(
-            leading: Icon(
+            title: Text(
+              'Main',
+              style: TextStyle(color: Colors.grey.shade300, fontSize: 15),
+            ),
+          ),
+          ListTile(
+            leading: const Icon(
               Icons.person,
               color: Colors.white,
             ),
@@ -57,7 +63,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                 'Change Password',
                 style: TextStyle(color: Colors.white),
               ),
-              leading: Icon(
+              leading: const Icon(
                 Icons.password_sharp,
                 color: Colors.white,
               ),
@@ -67,7 +73,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
             ),
           ),
           ListTile(
-            leading: Icon(
+            leading: const Icon(
               Icons.fingerprint,
               color: Colors.white,
             ),
@@ -82,7 +88,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
             onTap: () {},
           ),
           ListTile(
-            leading: Icon(
+            leading: const Icon(
               Icons.notifications,
               color: Colors.white,
             ),
@@ -100,7 +106,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
             color: Colors.white,
           ),
           ListTile(
-            leading: Icon(
+            leading: const Icon(
               Icons.privacy_tip,
               color: Colors.white,
             ),
@@ -130,7 +136,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
             onTap: () {},
           ),
           ListTile(
-            leading: Icon(
+            leading: const Icon(
               Icons.handshake,
               color: Colors.white,
             ),
@@ -145,7 +151,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
             onTap: () {},
           ),
           ListTile(
-            leading: Icon(
+            leading: const Icon(
               Icons.logout,
               color: Colors.white,
             ),
@@ -162,10 +168,10 @@ class _SettingsScreenState extends State<SettingsScreen> {
             },
           ),
           ListTile(
-            title: Center(
+            title: const Center(
               child: Padding(
-                padding: const EdgeInsets.only(top: 100),
-                child: const Text(
+                padding: EdgeInsets.only(top: 100),
+                child: Text(
                   //textAlign: TextAlign.center,
                   'Version 1.1.2', style: TextStyle(color: Colors.white),
                 ),

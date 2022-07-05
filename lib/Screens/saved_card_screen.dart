@@ -33,7 +33,7 @@ class _SavedCardState extends State<SavedCard> {
       backgroundColor: Colors.grey.shade900,
       body: SafeArea(
         child: Padding(
-          padding: EdgeInsets.only(
+          padding: const EdgeInsets.only(
             left: 20,
             right: 20,
             top: 10,
@@ -195,7 +195,9 @@ class BottomNavigationView extends StatelessWidget {
           shape: MyBorderShape(),
           shadows: [
             BoxShadow(
-                color: Colors.black38, blurRadius: 8.0.r, offset: Offset(1, 1)),
+                color: Colors.black38,
+                blurRadius: 8.0.r,
+                offset: const Offset(1, 1)),
           ],
         ),
         child: Row(

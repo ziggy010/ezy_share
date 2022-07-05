@@ -4,6 +4,9 @@ import 'package:ezy_share/constant.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:getwidget/getwidget.dart';
+import 'package:ezy_share/constant.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lottie/lottie.dart';
 
 class FAQ extends StatefulWidget {
@@ -48,6 +51,24 @@ class _FAQState extends State<FAQ> {
                 },
                 child: Container(
                   width: 350.h,
+                  decoration: BoxDecoration(
+                    color: Colors.grey.shade900,
+                    borderRadius: BorderRadius.circular(12),
+                    boxShadow: [
+                      const BoxShadow(
+                        color: Colors.black,
+                        offset: const Offset(3, 3),
+                        blurRadius: 15,
+                        spreadRadius: 1,
+                      ),
+                      BoxShadow(
+                        color: Colors.grey.shade800,
+                        offset: const Offset(-3, -3),
+                        blurRadius: 15,
+                        spreadRadius: 1,
+                      ),
+                    ],
+                  ),
                   child: Padding(
                     padding: const EdgeInsets.symmetric(
                       horizontal: 20,
@@ -105,6 +126,19 @@ class _FAQState extends State<FAQ> {
                       ),
                     ),
                   ),
+                ),
+              ),
+              SizedBox(
+                height: 40.h,
+              ),
+              GestureDetector(
+                onTap: () {
+                  setState(() {
+                    isFaqClicked2 = !isFaqClicked2;
+                  });
+                },
+                child: Container(
+                  width: 350.h,
                   decoration: BoxDecoration(
                     color: Colors.grey.shade900,
                     borderRadius: BorderRadius.circular(12),
@@ -193,6 +227,19 @@ class _FAQState extends State<FAQ> {
                       ),
                     ),
                   ),
+                ),
+              ),
+              SizedBox(
+                height: 40.h,
+              ),
+              GestureDetector(
+                onTap: () {
+                  setState(() {
+                    isFaqClicked3 = !isFaqClicked3;
+                  });
+                },
+                child: Container(
+                  width: 350.h,
                   decoration: BoxDecoration(
                     color: Colors.grey.shade900,
                     borderRadius: BorderRadius.circular(12),

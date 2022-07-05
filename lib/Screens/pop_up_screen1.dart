@@ -2,7 +2,6 @@ import 'package:ezy_share/Screens/saved_pop_up_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
 
 import '../constant.dart';
 
@@ -107,16 +106,9 @@ class PopUpScreen1 extends StatelessWidget {
                   SizedBox(
                     height: 15.h,
                   ),
-                  GestureDetector(
-                    onTap: () async {
-                      String number = '9813110577';
-                      bool? res =
-                          await FlutterPhoneDirectCaller.callNumber(number);
-                    },
-                    child: PopUpCardInlineDetails(
-                      specificIcon: Icons.phone,
-                      content: phoneNumber,
-                    ),
+                  PopUpCardInlineDetails(
+                    specificIcon: Icons.phone,
+                    content: phoneNumber,
                   ),
                   SizedBox(
                     height: 15.h,
