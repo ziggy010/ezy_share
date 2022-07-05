@@ -75,19 +75,45 @@ class _SavedCardState extends State<SavedCard> {
                 ),
                 Container(
                   height: 500.h,
-                  width: 350.h,
-                  child: ListView.builder(
-                    itemCount: 3,
-                    itemBuilder: ((context, index) {
-                      return Padding(
-                        padding: const EdgeInsets.symmetric(
-                            horizontal: 5, vertical: 15),
-                        child: ReusableCardsPremium(
-                          fullname: 'Risab Tajale',
-                          companyName: 'Ezy share',
-                        ),
-                      );
-                    }),
+                  child: ListView(
+                    children: [
+                      SizedBox(
+                        height: 20.h,
+                      ),
+                      ReusableCardsPremium(
+                        fullname: 'Bibek Shrestha',
+                        companyName: 'abc company',
+                        companyMotive: 'Share and connect',
+                        profession: 'App Developer',
+                        phoneNumber: '+977 9813110577',
+                        email: 'tajale01@gmailw.com',
+                        website: 'shresthaventures.com',
+                      ),
+                      SizedBox(
+                        height: 40.h,
+                      ),
+                      ReusableCardsPremium(
+                        fullname: 'Sunny Thakuri',
+                        companyName: 'Shrestha Ventures',
+                        companyMotive: 'Share and connect',
+                        profession: 'Manager',
+                        phoneNumber: '+977 98********',
+                        email: 'shresthaventures@gmail.com',
+                        website: 'shresthaventures.com',
+                      ),
+                      SizedBox(
+                        height: 40.h,
+                      ),
+                      ReusableCardsPremium(
+                        fullname: 'Risab Tajale',
+                        companyName: 'def company',
+                        companyMotive: 'Share and connect',
+                        profession: 'App Developer',
+                        phoneNumber: '+977 9813110577',
+                        email: 'tajale01@gmail.com',
+                        website: 'shresthaventures.com',
+                      ),
+                    ],
                   ),
                 ),
               ],

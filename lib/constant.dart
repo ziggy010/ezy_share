@@ -127,5 +127,17 @@ var kAboutVersion = TextStyle(
 var kAboutSub = TextStyle(
   color: Colors.grey.shade400,
   fontFamily: 'poppins',
-  fontSize: 12,
+  fontSize: 12.sp,
+);
+
+var kFaqHeading = TextStyle(
+  color: Colors.white,
+  fontSize: 17.sp,
+  fontFamily: 'poppins',
+  fontWeight: FontWeight.bold,
+);
+var kFaqContent = TextStyle(
+  color: Colors.grey.shade300,
+  fontSize: 13.sp,
+  fontFamily: 'poppins',
 );

@@ -101,19 +101,7 @@ class _ChooseCardScreenState extends State<ChooseCardScreen> {
                         SizedBox(
                           height: 10.h,
                         ),
-                        ElevatedButton(
-                          style: ElevatedButton.styleFrom(
-                            primary: Colors.grey.shade900, // Background color
-                          ),
-                          onPressed: () {
-                            showDialog(
-                              context: context,
-                              builder: (BuildContext context) =>
-                                  _buildAboutDialog(context),
-                            );
-                          },
-                          child: ReusableCardsNormal(),
-                        ),
+                        ReusableCardsNormal(),
                         SizedBox(
                           height: 40.h,
                         ),
@@ -138,22 +126,37 @@ class _ChooseCardScreenState extends State<ChooseCardScreen> {
                           height: 10.h,
                         ),
                         ReusableCardsPremium(
-                          fullname: 'Risab tajale',
+                          fullname: 'Risab Tajale',
                           companyName: 'EZY SHARE',
+                          companyMotive: 'Share and connect',
+                          profession: 'App Developer',
+                          phoneNumber: '+977 9813110577',
+                          email: 'tajale01@gmail.com',
+                          website: 'shresthaventures.com',
                         ),
                         SizedBox(
                           height: 40.h,
                         ),
                         ReusableCardsPremium(
-                          fullname: 'Risab tajale',
+                          fullname: 'Risab Tajale',
                           companyName: 'EZY SHARE',
+                          companyMotive: 'Share and connect',
+                          profession: 'App Developer',
+                          phoneNumber: '+977 9813110577',
+                          email: 'tajale01@gmail.com',
+                          website: 'shresthaventures.com',
                         ),
                         SizedBox(
                           height: 40.h,
                         ),
                         ReusableCardsPremium(
-                          fullname: 'Risab tajale',
+                          fullname: 'Risab Tajale',
                           companyName: 'EZY SHARE',
+                          companyMotive: 'Share and connect',
+                          profession: 'App Developer',
+                          phoneNumber: '+977 9813110577',
+                          email: 'tajale01@gmail.com',
+                          website: 'shresthaventures.com',
                         ),
                         SizedBox(
                           height: 40.h,
@@ -211,34 +214,4 @@ class PageSeperator extends StatelessWidget {
       ),
     );
   }
-}
-
-Widget _buildAboutDialog(BuildContext context) {
-  return Container(
-    child: new AlertDialog(
-      backgroundColor: Colors.grey.shade900,
-      title: const Text(''),
-      content: new Column(
-        mainAxisSize: MainAxisSize.min,
-        crossAxisAlignment: CrossAxisAlignment.end,
-        children: <Widget>[
-          _buildLogoAttribution(),
-        ],
-      ),
-    ),
-  );
-}
-
-Widget _buildLogoAttribution() {
-  return Container(
-    child: new Row(
-      children: <Widget>[
-        new Image.asset(
-          "lib/image/card.jpg",
-          height: 500.0.h,
-          width: 300.0.w,
-        ),
-      ],
-    ),
-  );
 }

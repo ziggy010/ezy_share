@@ -23,8 +23,13 @@ class BussinessCardHomeScreen extends StatelessWidget {
           height: 30.h,
         ),
         ReusableCardsPremium(
-          fullname: 'Risab tajale',
-          companyName: 'Ezy share',
+          fullname: 'Risab Tajale',
+          companyName: 'EZY SHARE',
+          companyMotive: 'Share and connect',
+          profession: 'App Developer',
+          phoneNumber: '+977 9813110577',
+          email: 'tajale01@gmail.com',
+          website: 'shresthaventures.com',
         ),
       ],
     );

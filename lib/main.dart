@@ -9,6 +9,7 @@ import 'package:ezy_share/Screens/profile_screen.dart';
 import 'package:ezy_share/Screens/register_screen.dart';
 import 'package:ezy_share/Screens/reset_password.dart';
 import 'package:ezy_share/Screens/saved_card_screen.dart';
+import 'package:ezy_share/Screens/saved_pop_up_screen.dart';
 import 'package:ezy_share/Screens/settings.dart';
 import 'package:ezy_share/Screens/sign_in.dart';
 import 'package:ezy_share/Screens/my_account.dart';
