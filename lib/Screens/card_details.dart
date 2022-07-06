@@ -2,6 +2,7 @@ import 'package:ezy_share/Screens/sign_in.dart';
 import 'package:ezy_share/components/reusable_button.dart';
 import 'package:ezy_share/components/text_fields.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../constant.dart';
 
@@ -16,7 +17,7 @@ class CardScreen extends StatelessWidget {
       body: SafeArea(
         child: SingleChildScrollView(
           child: Padding(
-            padding: const EdgeInsets.only(left: 30, top: 70),
+            padding: EdgeInsets.only(left: 30.w, top: 70.h),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               crossAxisAlignment: CrossAxisAlignment.baseline,
@@ -36,14 +37,14 @@ class CardScreen extends StatelessWidget {
                             style: kBodyTextStyle.copyWith(letterSpacing: 3.0),
                           ),
                           SizedBox(
-                            height: 10,
+                            height: 10.h,
                           ),
                           Text(
                             'For your new',
                             style: kWelcomeText.copyWith(letterSpacing: 3.0),
                           ),
                           SizedBox(
-                            height: 10,
+                            height: 10.h,
                           ),
                           Text(
                             'Business card.',
@@ -55,10 +56,10 @@ class CardScreen extends StatelessWidget {
                   ],
                 ),
                 SizedBox(
-                  height: 50,
+                  height: 50.h,
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(right: 30),
+                  padding: EdgeInsets.only(right: 30.w),
                   child: Container(
                     child: Column(
                       children: [
@@ -68,7 +69,7 @@ class CardScreen extends StatelessWidget {
                           onChanged: (value) {},
                         ),
                         SizedBox(
-                          height: 20,
+                          height: 20.h,
                         ),
                         ReusableTextField(
                           hintText: 'Middle name',
@@ -76,7 +77,7 @@ class CardScreen extends StatelessWidget {
                           onChanged: (value) {},
                         ),
                         SizedBox(
-                          height: 20,
+                          height: 20.h,
                         ),
                         ReusableTextField(
                           hintText: 'Last name',
@@ -84,7 +85,7 @@ class CardScreen extends StatelessWidget {
                           onChanged: (value) {},
                         ),
                         SizedBox(
-                          height: 20,
+                          height: 20.h,
                         ),
                         ReusableTextField(
                           hintText: 'Profession',
@@ -92,7 +93,7 @@ class CardScreen extends StatelessWidget {
                           onChanged: (value) {},
                         ),
                         SizedBox(
-                          height: 20,
+                          height: 20.h,
                         ),
                         ReusableTextField(
                           hintText: 'Company name',
@@ -100,7 +101,15 @@ class CardScreen extends StatelessWidget {
                           onChanged: (value) {},
                         ),
                         SizedBox(
-                          height: 20,
+                          height: 20.h,
+                        ),
+                        ReusableTextField(
+                          hintText: 'Designation',
+                          labelText: 'Designation',
+                          onChanged: (value) {},
+                        ),
+                        SizedBox(
+                          height: 20.h,
                         ),
                         ReusableTextField(
                           hintText: 'Contact number',
@@ -108,7 +117,7 @@ class CardScreen extends StatelessWidget {
                           onChanged: (value) {},
                         ),
                         SizedBox(
-                          height: 20,
+                          height: 20.h,
                         ),
                         ReusableTextField(
                           hintText: 'Email',
@@ -116,14 +125,14 @@ class CardScreen extends StatelessWidget {
                           onChanged: (value) {},
                         ),
                         SizedBox(
-                          height: 20,
+                          height: 20.h,
                         ),
                       ],
                     ),
                   ),
                 ),
                 SizedBox(
-                  height: 50,
+                  height: 50.h,
                 ),
                 Container(
                   child: Column(
@@ -151,17 +160,17 @@ class CardScreen extends StatelessWidget {
                         ),
                       ),
                       SizedBox(
-                        height: 20,
+                        height: 20.h,
                       ),
                       Padding(
-                        padding: const EdgeInsets.only(
-                          bottom: 50,
+                        padding: EdgeInsets.only(
+                          bottom: 50.h,
                         ),
                         child: ReusableButton(
                           specificText: 'Register',
                           specificColor: Colors.white,
                           textStyle: kButtonText,
-                          width: 300,
+                          width: 300.w,
                           onTap: () {},
                         ),
                       ),

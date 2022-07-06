@@ -141,3 +141,10 @@ var kFaqContent = TextStyle(
   fontSize: 13.sp,
   fontFamily: 'poppins',
 );
+
+var kErrorText = TextStyle(
+  color: Colors.white,
+  fontSize: 25.sp,
+  fontFamily: 'poppins',
+  fontWeight: FontWeight.bold,
+);

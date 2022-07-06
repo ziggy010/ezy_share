@@ -38,6 +38,16 @@ class Screen2 extends StatelessWidget {
                       Lottie.network(
                         'https://assets4.lottiefiles.com/packages/lf20_oj5zw0yb.json',
                         height: 350.h,
+                        errorBuilder: (context, error, stackTrace) {
+                          return Padding(
+                            padding: EdgeInsets.symmetric(horizontal: 20.w),
+                            child: Text(
+                              '*Error loading image*, connect to internet.',
+                              style: kErrorText,
+                              textAlign: TextAlign.center,
+                            ),
+                          );
+                        },
                       ),
                     ],
                   ),
