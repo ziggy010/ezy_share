@@ -134,48 +134,46 @@ class CardScreen extends StatelessWidget {
                 SizedBox(
                   height: 50.h,
                 ),
-                Container(
-                  child: Column(
-                    children: [
-                      Center(
-                        child: GestureDetector(
-                          onTap: () {
-                            Navigator.pushNamed(context, SignIn.id);
-                          },
-                          child: Text.rich(
-                            TextSpan(
-                              text: 'Already have an account?  ',
-                              style: kBodySmallText,
-                              children: [
-                                TextSpan(
-                                  text: 'Login',
-                                  style: kBodySmallText.copyWith(
-                                    fontWeight: FontWeight.bold,
-                                    color: Colors.white,
-                                  ),
+                Column(
+                  children: [
+                    Center(
+                      child: GestureDetector(
+                        onTap: () {
+                          Navigator.pushNamed(context, SignIn.id);
+                        },
+                        child: Text.rich(
+                          TextSpan(
+                            text: 'Already have an account?  ',
+                            style: kBodySmallText,
+                            children: [
+                              TextSpan(
+                                text: 'Login',
+                                style: kBodySmallText.copyWith(
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.white,
                                 ),
-                              ],
-                            ),
+                              ),
+                            ],
                           ),
                         ),
                       ),
-                      SizedBox(
-                        height: 20.h,
+                    ),
+                    SizedBox(
+                      height: 20.h,
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(
+                        bottom: 50.h,
                       ),
-                      Padding(
-                        padding: EdgeInsets.only(
-                          bottom: 50.h,
-                        ),
-                        child: ReusableButton(
-                          specificText: 'Register',
-                          specificColor: Colors.white,
-                          textStyle: kButtonText,
-                          width: 300.w,
-                          onTap: () {},
-                        ),
+                      child: ReusableButton(
+                        specificText: 'Register',
+                        specificColor: Colors.white,
+                        textStyle: kButtonText,
+                        width: 300.w,
+                        onTap: () {},
                       ),
-                    ],
-                  ),
+                    ),
+                  ],
                 ),
               ],
             ),
