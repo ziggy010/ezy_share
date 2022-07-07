@@ -43,7 +43,7 @@ class _FAQState extends State<FAQ> {
                 child: const GFAccordion(
                     title: 'How to create your own card template?',
                     content:
-                        "1. First register your information and select template.\n\n2.View your template.",
+                        "1. First register your information and select template.\n\n2.View your template.\n 2. Your Template is ready.",
                     collapsedIcon: Icon(Icons.add),
                     expandedIcon: Icon(Icons.minimize)),
               ),
