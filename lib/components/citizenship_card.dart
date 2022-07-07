@@ -27,14 +27,14 @@ class CitizenshipCard extends StatelessWidget {
         SizedBox(
           height: 20.h,
         ),
-        Container(
-          padding: EdgeInsets.symmetric(
-            vertical: 10.w,
-          ),
-          height: 230.h,
-          width: 330.w,
-          child: specificImage,
-          decoration: BoxDecoration(
+        Expanded(
+          child: Container(
+            padding: EdgeInsets.symmetric(
+              vertical: 10.w,
+            ),
+            width: 330.w,
+            child: specificImage,
+            decoration: BoxDecoration(
               color: Colors.grey.shade900,
               borderRadius: BorderRadius.circular(15),
               boxShadow: [
@@ -50,7 +50,9 @@ class CitizenshipCard extends StatelessWidget {
                   blurRadius: 15.r,
                   spreadRadius: 1.r,
                 ),
-              ]),
+              ],
+            ),
+          ),
         ),
       ],
     );
