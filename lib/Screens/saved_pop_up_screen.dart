@@ -43,23 +43,24 @@ class PopUpScreen extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Container(
-                    height: 500.h,
-                    width: 380.w,
-                    child: PageView(
-                      controller: _controller,
-                      children: [
-                        PopUpScreen1(
-                          fullname: fullname,
-                          companyMotive: companyMotive,
-                          companyName: companyName,
-                          profession: profession,
-                          phoneNumber: phoneNumber,
-                          email: email,
-                          website: website,
-                        ),
-                        PopUpScreen2(),
-                      ],
+                  Expanded(
+                    child: Container(
+                      width: 380.w,
+                      child: PageView(
+                        controller: _controller,
+                        children: [
+                          PopUpScreen1(
+                            fullname: fullname,
+                            companyMotive: companyMotive,
+                            companyName: companyName,
+                            profession: profession,
+                            phoneNumber: phoneNumber,
+                            email: email,
+                            website: website,
+                          ),
+                          PopUpScreen2(),
+                        ],
+                      ),
                     ),
                   ),
                   SizedBox(
