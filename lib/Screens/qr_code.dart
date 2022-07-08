@@ -60,7 +60,7 @@ class _ScanQrPageState extends State<ScanQrPage> {
         title: Text('QR Scanner'),
         bottomOpacity: 0.0,
         elevation: 0.0,
-        backgroundColor: Colors.grey.shade900,
+        backgroundColor: Colors.blue,
         centerTitle: true,
       ),
       body: Column(

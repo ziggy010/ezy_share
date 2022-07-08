@@ -36,7 +36,7 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  final quickActions = QuickActions();
+  final quickActions = const QuickActions();
 
   @override
   void initState() {
@@ -44,12 +44,12 @@ class _MyAppState extends State<MyApp> {
     super.initState();
     quickActions.setShortcutItems(
       [
-        ShortcutItem(
+        const ShortcutItem(
           type: 'Scan',
           localizedTitle: 'Scan Code',
           icon: 'qr_scan.png',
         ),
-        ShortcutItem(
+        const ShortcutItem(
           type: 'Share',
           localizedTitle: 'Share Code',
           icon: 'share.png',
